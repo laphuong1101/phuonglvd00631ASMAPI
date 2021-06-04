@@ -1,0 +1,231 @@
+{
+	"id": "4dafbc1c-b31a-47b0-bb7c-211ccdd9e26f",
+	"name": "phuonglvd00631ASM",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [],
+	"folders_order": [
+		"cb4c5d2d-f29e-4cb0-ae09-84ac17314ced",
+		"679fe7cc-34d5-4ebd-8657-00b1c51bd736"
+	],
+	"protocolProfileBehavior": {},
+	"folders": [
+		{
+			"id": "679fe7cc-34d5-4ebd-8657-00b1c51bd736",
+			"name": "district",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "4dafbc1c-b31a-47b0-bb7c-211ccdd9e26f",
+			"folder": null,
+			"order": [
+				"51815db4-db08-48b1-8de9-0703db08cffa",
+				"ec26906a-ad7d-48f7-8ffb-f6d6ac1a6d01",
+				"8119add4-c3c6-47e0-885e-64706427548c"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"id": "cb4c5d2d-f29e-4cb0-ae09-84ac17314ced",
+			"name": "street",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "4dafbc1c-b31a-47b0-bb7c-211ccdd9e26f",
+			"folder": null,
+			"order": [
+				"71bdbf7d-3732-4e67-8362-e781715ccd01",
+				"6faa10a7-95bb-404c-8cdb-feefd5ada8c1",
+				"6b711b1a-c577-4dfd-b8f2-57f426b4fed0",
+				"0716fbe8-578c-4f5d-a4fa-8896f26f2da1"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"requests": [
+		{
+			"id": "0716fbe8-578c-4f5d-a4fa-8896f26f2da1",
+			"name": "find by district and name",
+			"url": "http://localhost:8080/api/v1/streets/find-by-district-and-name?district=cau giay&name=tran duy hung",
+			"description": "",
+			"data": [],
+			"dataOptions": {
+				"raw": {
+					"language": "json"
+				}
+			},
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "district",
+					"value": "cau giay",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "tran duy hung",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "cb4c5d2d-f29e-4cb0-ae09-84ac17314ced",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"rawModeData": "{\n    \"name\": \"tran duy hung\",\n    \"description\" : \"pho ban thuc an cho trym\",\n    \"district\": {\n        \"name\": \"cau giay\"\n    }\n}",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "51815db4-db08-48b1-8de9-0703db08cffa",
+			"name": "create",
+			"url": "http://localhost:8080/api/v1/districts",
+			"description": "",
+			"data": [],
+			"dataOptions": {
+				"raw": {
+					"language": "json"
+				}
+			},
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "679fe7cc-34d5-4ebd-8657-00b1c51bd736",
+			"rawModeData": "{\n    \"name\": \"hai ba trung\",\n    \"streets\" : [\n        {\n            \"name\" : \"thanh nhan\",\n            \"description\": \"hello\"\n        }\n    ]\n}",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "6b711b1a-c577-4dfd-b8f2-57f426b4fed0",
+			"name": "find all",
+			"url": "http://localhost:8080/api/v1/streets",
+			"description": "",
+			"data": [],
+			"dataOptions": {
+				"raw": {
+					"language": "json"
+				}
+			},
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "cb4c5d2d-f29e-4cb0-ae09-84ac17314ced",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"rawModeData": "{\n    \"name\": \"tran duy hung\",\n    \"description\" : \"pho ban thuc an cho trym\",\n    \"district\": {\n        \"name\": \"cau giay\"\n    }\n}",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "6faa10a7-95bb-404c-8cdb-feefd5ada8c1",
+			"name": "create street with district not exist",
+			"url": "http://localhost:8080/api/v1/streets",
+			"description": "",
+			"data": [],
+			"dataOptions": {
+				"raw": {
+					"language": "json"
+				}
+			},
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "cb4c5d2d-f29e-4cb0-ae09-84ac17314ced",
+			"rawModeData": "{\n    \"name\": \"pham hung\",\n    \"description\" : \"duong dua tu than\",\n    \"districtId\": 3\n}",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "71bdbf7d-3732-4e67-8362-e781715ccd01",
+			"name": "create street with district exist",
+			"url": "http://localhost:8080/api/v1/streets",
+			"description": "",
+			"data": [],
+			"dataOptions": {
+				"raw": {
+					"language": "json"
+				}
+			},
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "cb4c5d2d-f29e-4cb0-ae09-84ac17314ced",
+			"rawModeData": "{\n    \"name\": \"pham hung\",\n    \"description\" : \"duong dua tu than\",\n    \"districtId\": 3\n}",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "8119add4-c3c6-47e0-885e-64706427548c",
+			"name": "seeding hardcode",
+			"url": "http://localhost:8080/api/v1/districts/seed/generate",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "679fe7cc-34d5-4ebd-8657-00b1c51bd736",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "ec26906a-ad7d-48f7-8ffb-f6d6ac1a6d01",
+			"name": "find all",
+			"url": "http://localhost:8080/api/v1/districts",
+			"description": "",
+			"data": [],
+			"dataOptions": {
+				"raw": {
+					"language": "json"
+				}
+			},
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "679fe7cc-34d5-4ebd-8657-00b1c51bd736",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"rawModeData": "{\n    \"name\": \"dong da\",\n    \"streets\" : [\n        {\n            \"name\" : \"tay son\",\n            \"description\": \"hello\"\n        }\n    ]\n}",
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}
