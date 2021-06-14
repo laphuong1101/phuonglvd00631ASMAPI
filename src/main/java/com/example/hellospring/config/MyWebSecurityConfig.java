@@ -37,7 +37,7 @@ public class MyWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-            .antMatchers("/admin/district/create", "/register").permitAll() // bo qua k can quyen
+            .antMatchers("/admin/district/create", "/user/*").permitAll() // bo qua k can quyen
             .antMatchers("/admin/district").hasAnyRole("ADMIN" )
             .anyRequest().authenticated()
             .and()

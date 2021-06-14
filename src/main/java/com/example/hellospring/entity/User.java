@@ -5,10 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Setter
@@ -22,4 +21,22 @@ public class User {
 
     private String userName;
     private String password;
+    private int role; // 1.user, 2.admin
+
+    @OneToMany(mappedBy="user", cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+    private Set<Credential> credentials = new HashSet<>();
+
+    public void setCredentials(Set<Credential> credentials) {
+        this.credentials = credentials;
+
+        for(Credential c : credentials) {
+            c.setUser(this);
+        }
+    }
+
+    public User(String userName, String password, int role) {
+        this.userName = userName;
+        this.password = password;
+        this.role = role;
+    }
 }
